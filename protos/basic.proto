@@ -1,0 +1,14 @@
+syntax="proto3";
+package try_grpc;
+
+option go_package = "/";
+
+message Empty {}
+
+message Status {
+  uint32 status = 1;
+}
+
+message Id {
+  uint64 id = 1;
+}

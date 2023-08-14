@@ -1,0 +1,25 @@
+syntax="proto3";
+package try_grpc;
+
+import "basic.proto";
+
+option go_package = "/user";
+
+service UserService {
+  rpc GetUsers(Empty) returns(Users);
+  rpc GetUser(Id) returns(User);
+  rpc CreateUser(User) returns(Id);
+  rpc UpdateUser(User) returns(Status);
+  rpc DeleteUser(Id) returns(Status);
+}
+
+message User {
+  Id      id   = 1;
+  string  name = 2;
+  uint32  age  = 3;
+  string  bio  = 4;
+}
+
+message Users {
+  repeated User users = 1;
+}
