@@ -3,7 +3,7 @@ package try_grpc;
 
 import "basic.proto";
 
-option go_package = "/pb/user";
+option go_package = "/";
 
 service UserService {
   rpc GetUsers(Empty) returns(Users);

@@ -4,10 +4,9 @@
 // 	protoc        v4.23.2
 // source: user.proto
 
-package user
+package __
 
 import (
-	basic "github.com/rizkyrsyd28/try-grpc-protobuf/v1/pb/basic"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,10 +25,10 @@ type User struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   *basic.Id `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name string    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Age  uint32    `protobuf:"varint,3,opt,name=age,proto3" json:"age,omitempty"`
-	Bio  string    `protobuf:"bytes,4,opt,name=bio,proto3" json:"bio,omitempty"`
+	Id   *Id    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Age  uint32 `protobuf:"varint,3,opt,name=age,proto3" json:"age,omitempty"`
+	Bio  string `protobuf:"bytes,4,opt,name=bio,proto3" json:"bio,omitempty"`
 }
 
 func (x *User) Reset() {
@@ -64,7 +63,7 @@ func (*User) Descriptor() ([]byte, []int) {
 	return file_user_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *User) GetId() *basic.Id {
+func (x *User) GetId() *Id {
 	if x != nil {
 		return x.Id
 	}
@@ -168,8 +167,7 @@ var file_user_proto_rawDesc = []byte{
 	0x74, 0x75, 0x73, 0x12, 0x2c, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x55, 0x73, 0x65,
 	0x72, 0x12, 0x0c, 0x2e, 0x74, 0x72, 0x79, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x49, 0x64, 0x1a,
 	0x10, 0x2e, 0x74, 0x72, 0x79, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75,
-	0x73, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x70, 0x62, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x42, 0x03, 0x5a, 0x01, 0x2f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -186,11 +184,11 @@ func file_user_proto_rawDescGZIP() []byte {
 
 var file_user_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_user_proto_goTypes = []interface{}{
-	(*User)(nil),         // 0: try_grpc.User
-	(*Users)(nil),        // 1: try_grpc.Users
-	(*basic.Id)(nil),     // 2: try_grpc.Id
-	(*basic.Empty)(nil),  // 3: try_grpc.Empty
-	(*basic.Status)(nil), // 4: try_grpc.Status
+	(*User)(nil),   // 0: try_grpc.User
+	(*Users)(nil),  // 1: try_grpc.Users
+	(*Id)(nil),     // 2: try_grpc.Id
+	(*Empty)(nil),  // 3: try_grpc.Empty
+	(*Status)(nil), // 4: try_grpc.Status
 }
 var file_user_proto_depIdxs = []int32{
 	2, // 0: try_grpc.User.id:type_name -> try_grpc.Id
@@ -217,6 +215,7 @@ func file_user_proto_init() {
 	if File_user_proto != nil {
 		return
 	}
+	file_basic_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_user_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*User); i {
